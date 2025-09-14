@@ -57,13 +57,17 @@ model = train_model(X_train, y_train)
 # save the model and the encoder
 model_path = os.path.join(project_path, "model", "model.pkl")
 save_model(model, model_path)
+print(f"Model saved to {model_path}")
+
 encoder_path = os.path.join(project_path, "model", "encoder.pkl")
 save_model(encoder, encoder_path)
+print(f"Model saved to {encoder_path}")
 
 # load the model
 model = load_model(
     model_path
 ) 
+print(f"Loading model from {model_path}")
 
 # Use the inference function to run the model inferences on the test dataset.
 preds = inference(model, X_test)
